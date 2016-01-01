@@ -91,8 +91,11 @@ function playToFive() {
     
     
     }
-  
+   console.log("player : " +playerWins, "Computer : "+computerWins);
+
     return [playerWins, computerWins];
 }
+
+ 
 
 
