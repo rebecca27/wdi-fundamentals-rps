@@ -4,7 +4,7 @@
 'use strict';
 
 function getInput() {
-    console.log("Please choose either 'rock', 'paper', or 'scissors'.")
+    console.log("Please choose either 'rock', 'paper', or 'scissors'.");
     return prompt();
 }
 function randomPlay() {
@@ -14,7 +14,10 @@ function randomPlay() {
     } else if (randomNumber < 0.66) {
         return "paper";
     } else {
-        return "scissors"/*           Write Your Code Below            */
+        return "scissors";
+    }
+}
+    /*           Write Your Code Below            */
 ////////////////////////////////////////////////
 
 function getPlayerMove(move) {
@@ -22,7 +25,7 @@ function getPlayerMove(move) {
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `getInput()`    return /* Your Expression */;
     
-    if(move != null){ 
+    if(move !== null && move !== undefined && move !=='' ){ 
     return move;
     }
     else{
@@ -34,8 +37,8 @@ function getComputerMove(move) {
   // Write an expression that operates on a variable called `move`
     // If a `move` has a value, your expression should evaluate to that value.
     // However, if `move` is not specified / is null, your expression should equal `randomPlay()`.
-    /* Your Expression */;
-    if (move != null){ 
+    /* Your Expression */
+    if (move !== null){ 
     		return move;
     		}
     return randomPlay();
@@ -64,7 +67,7 @@ function getWinner(playerMove,computerMove) {
     }else if (computerMove==='paper' && playerMove==='rock'){
     winner= 'computer';
     }else{
-    winner='tie'
+    winner='tie';
     }
     
     return winner;
@@ -77,17 +80,19 @@ function playToFive() {
     // Write code that plays 'Rock, Paper, Scissors' until either the player or the computer has won five times.
     /* YOUR CODE HERE */
     while (playerWins <5 && computerWins <5){
-    var winner= getWinner(getPlayerMove(null),getComputerMove(null));
+    var winner= getWinner(getPlayerMove('rock'),getComputerMove(null));
     if (winner==='computer'){
     computerWins++;
     }
-    else if (winner==='player'){
+     if (winner==='player'){
     playerWins++;
     }
     
     
     
     }
+  
     return [playerWins, computerWins];
 }
+
 
